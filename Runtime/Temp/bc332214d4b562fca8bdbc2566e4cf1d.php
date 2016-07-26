@@ -1,0 +1,3 @@
+<?php
+//000000000300a:2:{i:0;a:2:{s:2:"id";s:3:"100";s:4:"user";a:4:{s:8:"avatar64";s:55:"/dev/opensns/Uploads/Avatar/100/55e556bea67d7_64_64.jpg";s:8:"nickname";s:7:"richard";s:9:"space_url";s:58:"/dev/opensns/index.php?s=/ucenter/index/index/uid/100.html";s:10:"space_link";s:102:"<a ucard=100 target=_blank href=/dev/opensns/index.php?s=/ucenter/index/index/uid/100.html>richard</a>";}}i:1;a:2:{s:2:"id";s:1:"1";s:4:"user";a:4:{s:8:"avatar64";s:53:"/dev/opensns/Uploads/Avatar/1/56039892b7f43_64_64.jpg";s:8:"nickname";s:6:"测试";s:9:"space_url";s:56:"/dev/opensns/index.php?s=/ucenter/index/index/uid/1.html";s:10:"space_link";s:103:"<a ucard=1 target=_blank href=/dev/opensns/index.php?s=/ucenter/index/index/uid/1.html>大爱迪生</a>";}}}
+?>

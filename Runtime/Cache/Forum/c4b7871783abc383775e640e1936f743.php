@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit(); echo (op_t($post["title"])); ?> —— 论坛

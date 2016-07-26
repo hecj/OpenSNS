@@ -1,0 +1,45 @@
+<div class="footer-bar ">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+
+                <div>
+                    {:modC('ABOUT_US','暂未设置','Config')}
+                </div>
+                <div class="copyright" style="">{:modC('COPY_RIGHT','暂未设置','Config')}
+                Powered by <a style="color: #888;" target="_blank" href="http://www.opensns.cn">OpenSNS</a>
+                    备案号：<a href="http://www.miitbeian.gov.cn/" target="_blank">
+                        {:modC('ICP','暂未设置','Config')} </a>
+            </div>
+            </div>
+            <div class="col-xs-1">
+                &nbsp;
+            </div>
+            <div class="col-xs-2">
+                <ul class="friend-link">
+                    {:Hook('friendLink')}
+                </ul>
+            </div>
+            <div class="col-xs-2">
+                <h2>关注我们</h2>
+
+                <php>
+                    $qrcode=modC('QRCODE','暂未设置','Config');
+                    </php>
+                <img class="qrcode" src="{$qrcode|getThumbImageById=90,90}">
+            </div>
+        </div>
+        {:C('COUNT_CODE')}
+    </div>
+
+</div>
+<include file="Public/js"/>
+
+<block name="script"><!-- 用于加载js代码 --></block>
+
+<!-- 页面footer钩子，一般用于加载插件JS文件和JS代码 -->
+{:hook('pageFooter', 'widget')}
+<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
+    <block name="hidden"></block>
+</div>

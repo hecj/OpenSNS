@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit(); echo (op_t($user_info["username"])); ?>的个人主页

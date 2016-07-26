@@ -1,0 +1,3 @@
+<?php
+//000000003600a:11:{s:2:"id";s:2:"17";s:7:"from_id";s:1:"1";s:5:"title";s:12:"系统消息";s:7:"content";s:32:"操作太频繁！2秒后再试~";s:3:"url";s:64:"http://localhost/dev/opensns/index.php?s=/forum/index/index.html";s:4:"args";N;s:4:"type";s:1:"0";s:11:"create_time";s:10:"1443146262";s:6:"status";s:1:"1";s:9:"args_json";s:4:"null";s:7:"web_url";s:64:"http://localhost/dev/opensns/index.php?s=/forum/index/index.html";}
+?>

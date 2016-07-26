@@ -1,0 +1,44 @@
+<div class="margin-bottom-15"></div>
+<nav class="menu" data-toggle="menu">
+    <if condition="check_auth('Forum/Index/addPost',get_expect_ids(0,0,0,forum_id,0))&&forumAllowCurrentUserGroup($forum_id)">
+        <a class="btn btn-primary btn-md" href="{:U('Index/edit',array('forum_id'=>$forum_id))}"><i
+                class="icon-edit"></i> 发表新帖</a>
+    </if>
+
+    <php>$myForums=D('Forum')->getFollowForums(is_login());</php>
+
+    <ul class="nav nav-primary" style="background: #ffffff">
+        <li class="show">
+            <a href="#"><i class="icon-heart"></i> 我的关注</a>
+            <ul class="nav">
+                <volist name="myForums" id="each_forum">
+                    <li  class=""><a
+                            href="{:U('Index/forum',array('id'=>$each_forum['id']))}" class=" "><i
+                            class="icon-heart"></i> {$each_forum.title|op_t}</a></li>
+                </volist>
+            </ul>
+        </li>
+
+        <volist name="types" id="type">
+            <li class=" show">
+                <a href="#"><i class="icon-list-ul"></i> {$type.title}</a>
+                <ul class="nav">
+                    <volist name="type.forums" id="each_forum">
+                        <li class="forum_{$each_forum.id}" class=""><a
+                                href="{:U('Index/forum',array('id'=>$each_forum['id']))}" class=" "><i
+                                class="icon-comment-alt"></i> {$each_forum.title|op_t}</a></li>
+                    </volist>
+                </ul>
+            </li>
+        </volist>
+
+    </ul>
+    <script>
+        $('.forum_{$forum_id}').addClass('active')
+    </script>
+</nav>
+
+{:W('Event/RecommendEvent/recommendEvent')}
+
+{:W('HotPost/lists',array('forum_id'=>$forum_id))}
+

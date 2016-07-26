@@ -1,0 +1,39 @@
+<div style="font-size: 16px;">
+    <div>当前登录：<a ucard="{$now_user.uid}">[{$now_user.uid}]{$now_user.nickname}</a></div>
+    <div>可切换到用户：</div>
+    <notempty name="users">
+        <volist name="users" id="user">
+            <div class="col-xs-3" style="margin: 5px 0;"><span style="width: 100%" class="text-more"><a data-role="change_majia" data-uid="{$user.uid}" ucard="{$user.uid}">[{$user.uid}]{$user.nickname}</a></span></div>
+        </volist>
+        <else/>
+        <p class="text-muted" style="text-align: center; font-size: 18px;">
+            暂无可用切换用户，先去 马甲插件 中设置可切换用户～
+        </p>
+    </notempty>
+    <div class="clearfix"></div>
+</div>
+        <script>
+
+            $(function(){
+                var data_url="{:addons_url('Majia://Majia/doChange')}";
+                ucard();
+                $('[data-role="change_majia"]').click(function(){
+                    var uid=$(this).attr('data-uid');
+                    $.post(data_url,{uid:uid},function(msg){
+                        if(msg.status){
+                            if(msg.url!=undefined){
+                                location.href=msg.url;
+                            }else{
+                                $('.close').click();
+                                toast.success('操作成功！');
+                                setTimeout(function(){
+                                    location.reload();
+                                },1500);
+                            }
+                        }else{
+                            toast.error('非法操作！');
+                        }
+                    });
+                });
+            });
+        </script>
